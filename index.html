@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenNyx - The Ultimate Secure OS</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        html, body {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+            color: #d1d1d6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        
+        .section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .apple-gradient {
+            background: linear-gradient(180deg, #1f1f1f 0%, #0d0d0d 100%);
+        }
+
+        .cta-button {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .icon-container {
+            transition: transform 0.3s;
+        }
+
+        .icon-container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Typing effect cursor */
+        .typing-cursor {
+            border-right: 2px solid #fff;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #fff; }
+        }
+    </style>
+</head>
+<body class="apple-gradient">
+
+    <!-- Header / Navigation -->
+    <header class="p-4 fixed top-0 w-full z-50 backdrop-blur-md bg-gray-900/50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- Logo Placeholder -->
+            <div class="flex items-center">
+                <img src="https://placehold.co/40x40/1f1f1f/d1d1d6?text=Logo" alt="OpenNyx Logo" class="h-10 w-10 mr-3 rounded-full">
+                <h1 class="text-xl font-bold text-white tracking-wide">OpenNyx</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8 text-sm">
+                <a href="#features" class="text-gray-400 hover:text-white transition-colors duration-300">Features</a>
+                <a href="#vision" class="text-gray-400 hover:text-white transition-colors duration-300">Vision</a>
+                <a href="#how-it-works" class="text-gray-400 hover:text-white transition-colors duration-300">How It Works</a>
+                <a href="#technology" class="text-gray-400 hover:text-white transition-colors duration-300">Technology</a>
+                <a href="#download" class="text-gray-400 hover:text-white transition-colors duration-300">Download</a>
+                <a href="#collaborate" class="text-gray-400 hover:text-white transition-colors duration-300">Collaborate</a>
+                <a href="#donate" class="text-gray-400 hover:text-white transition-colors duration-300">Donate</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="md:hidden hidden bg-gray-900/90 py-4">
+            <a href="#features" class="block px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300">Features</a>
+            <a href="#vision" class="block px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300">Vision</a>
+            <a href="#how-it-works" class="block px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300">How It Works</a>
+            <a href="#technology" class="block px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300">Technology</a>
+            <a href="#download" class="block px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300">Download</a>
+            <a href="#collaborate" class="block px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300">Collaborate</a>
+            <a href="#donate" class="block px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300">Donate</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col items-center justify-center text-center p-8 pt-24 hero-section section">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-4 tracking-tight">
+                    Imagine a place...<br>where <span id="typing-text" class="typing-cursor text-cyan-400"></span>
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                    OpenNyx is your idea of a fully encrypted, portable, and self-destructible operating system. Built for ultimate privacy and digital freedom.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+                    <a href="#collaborate" class="bg-white text-gray-900 font-medium py-3 px-6 rounded-full transition-all cta-button">
+                        Join the Mission
+                    </a>
+                    <a href="#donate" class="bg-gray-800 text-white font-medium py-3 px-6 rounded-full transition-all cta-button">
+                        Support the Project
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-24 section">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-3xl md:text-5xl font-bold text-white mb-16 tracking-tight">Features Built for Uncompromised Freedom</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+                    <!-- Feature 1: USB Stick -->
+                    <div class="flex flex-col items-center p-6 rounded-lg icon-container">
+                        <div class="text-white text-5xl mb-4">
+                            <i class="fas fa-usb"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-white mb-2">Portable & Untraceable</h4>
+                        <p class="text-gray-400 text-sm">OpenNyx runs directly from a secure, bootable USB stick. It leaves absolutely no digital footprint on the host machine, ensuring your activities remain private and untraceable.</p>
+                    </div>
+
+                    <!-- Feature 2: Nuke Function -->
+                    <div class="flex flex-col items-center p-6 rounded-lg icon-container">
+                        <div class="text-white text-5xl mb-4">
+                            <i class="fas fa-bomb"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-white mb-2">The 'Nuke' Function</h4>
+                        <p class="text-gray-400 text-sm">With a single, rapid command, OpenNyx can instantly and irreversibly destroy its entire system. This ensures that no data can be recovered, providing ultimate peace of mind in critical situations.</p>
+                    </div>
+
+                    <!-- Feature 3: Tor Integration -->
+                    <div class="flex flex-col items-center p-6 rounded-lg icon-container">
+                        <div class="text-white text-5xl mb-4">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-white mb-2">Integrated Privacy</h4>
+                        <p class="text-gray-400 text-sm">OpenNyx is natively connected and configured to route all network traffic through the Tor network. This ensures your online activity is anonymous and your location is obscured from the moment you boot up.</p>
+                    </div>
+
+                    <!-- Feature 4: Encryption -->
+                    <div class="flex flex-col items-center p-6 rounded-lg icon-container">
+                        <div class="text-white text-5xl mb-4">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold text-white mb-2">Multi-Layered Security</h4>
+                        <p class="text-gray-400 text-sm">Built on a meticulously hardened Linux kernel, OpenNyx employs multiple, robust layers of encryption for all data at rest and in transit. This provides uncompromised data protection against even the most sophisticated threats.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Vision Section -->
+        <section id="vision" class="py-24 section">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">Our Vision: Digital Sovereignty for All</h3>
+                <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                    In an age where digital privacy is constantly under threat, OpenNyx aims to empower individuals with complete control over their digital lives. We envision a world where personal data remains truly personal, free from surveillance and exploitation. OpenNyx is more than an OS; it's a statement for digital freedom.
+                </p>
+                <div class="grid md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
+                    <div>
+                        <h4 class="text-xl font-semibold text-white mb-2"><i class="fas fa-shield-alt text-lg mr-2"></i> Unbreakable Security</h4>
+                        <p class="text-gray-400 text-sm">To create an operating system that stands as a fortress against all forms of digital intrusion, ensuring absolute confidentiality and integrity of user data.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold text-white mb-2"><i class="fas fa-user-secret text-lg mr-2"></i> Absolute Anonymity</h4>
+                        <p class="text-gray-400 text-sm">To provide a platform where users can navigate the digital world without leaving a trace, protecting their identity and activities from prying eyes.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold text-white mb-2"><i class="fas fa-lightbulb text-lg mr-2"></i> Open Source, Community Driven</h4>
+                        <p class="text-gray-400 text-sm">To foster a collaborative environment where the brightest minds can contribute to building the future of secure computing, ensuring transparency and continuous improvement.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold text-white mb-2"><i class="fas fa-hand-holding-heart text-lg mr-2"></i> Accessible Privacy for Everyone</h4>
+                        <p class="text-gray-400 text-sm">To make advanced security and privacy tools accessible and easy to use for everyone, regardless of their technical expertise, empowering a broader audience with true digital freedom.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-24 section">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">How It Works: Simplicity Meets Security</h3>
+                <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                    OpenNyx is designed for intuitive use without compromising on its robust security features. Here's a glimpse into its seamless operation.
+                </p>
+                <div class="grid md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-lg">
+                        <h4 class="text-xl font-semibold text-white mb-3"><i class="fas fa-laptop-code text-lg mr-2"></i> Universal Compatibility</h4>
+                        <p class="text-gray-400 text-sm">OpenNyx is designed to boot and run seamlessly on virtually any Windows or Linux PC. Simply plug in your secure USB stick, boot from it, and you're ready to go – no installation required on the host machine.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-lg">
+                        <h4 class="text-xl font-semibold text-white mb-3"><i class="fas fa-memory text-lg mr-2"></i> RAM-Only Operation</h4>
+                        <p class="text-gray-400 text-sm">For maximum privacy and to leave no trace, OpenNyx runs entirely in your computer's RAM (Random Access Memory). This means that once you shut down, all session data is instantly wiped from memory, ensuring complete data ephemerality.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-lg">
+                        <h4 class="text-xl font-semibold text-white mb-3"><i class="fas fa-microchip text-lg mr-2"></i> Choose Your Capacity</h4>
+                        <p class="text-gray-400 text-sm">OpenNyx will be available in two secure USB stick versions: a 4GB variant for essential privacy needs and an 8GB version for users requiring more storage for their encrypted files and applications. Both offer the same core security features.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-lg">
+                        <h4 class="text-xl font-semibold text-white mb-3"><i class="fas fa-hdd text-lg mr-2"></i> All Data On-Stick</h4>
+                        <p class="text-gray-400 text-sm">Every piece of data, from the operating system itself to your personal files and browsing history, resides exclusively on the encrypted USB stick. This ensures that no sensitive information is ever left behind on the host computer.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-lg col-span-full">
+                        <h4 class="text-xl font-semibold text-white mb-3"><i class="fas fa-key text-lg mr-2"></i> Dual USB Stick Unlocking (Optional)</h4>
+                        <p class="text-gray-400 text-sm">For an unparalleled level of security, OpenNyx offers an optional feature requiring two separate USB sticks to unlock and boot the system. One stick acts as the primary OS, while the second holds a crucial encryption key, creating a physical two-factor authentication mechanism.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Under the Hood / Technology Section -->
+        <section id="technology" class="py-24 section">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">Under the Hood: Engineering for Security</h3>
+                <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                    OpenNyx is meticulously engineered from the ground up with security as its paramount principle. Discover the robust foundation that makes it truly impenetrable.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8 text-left max-w-5xl mx-auto">
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-lg">
+                        <h4 class="text-xl font-semibold text-white mb-3"><i class="fab fa-linux text-lg mr-2"></i> Linux Base & Hardening</h4>
+                        <p class="text-gray-400 text-sm">Built upon a minimalistic and heavily customized Linux distribution, OpenNyx undergoes extensive kernel hardening. This includes disabling unnecessary modules, applying strict security policies, and implementing Mandatory Access Control (MAC) frameworks like SELinux or AppArmor to restrict process capabilities.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-lg">
+                        <h4 class="text-xl font-semibold text-white mb-3"><i class="fas fa-key text-lg mr-2"></i> Advanced Encryption Protocols</h4>
+                        <p class="text-gray-400 text-sm">Every aspect of OpenNyx is encrypted. We utilize industry-leading encryption standards such as AES-256 for full disk encryption (FDE) with LUKS, combined with an easy-to-install setup process. Data in transit is secured via strong TLS/SSL configurations and automatic VPN tunneling before hitting the Tor network.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-lg">
+                        <h4 class="text-xl font-semibold text-white mb-3"><i class="fas fa-network-wired text-lg mr-2"></i> Forced Tor Integration</h4>
+                        <p class="text-400 text-sm">All outbound network connections are strictly forced through the Tor network, eliminating any possibility of IP leakage. DNS requests are also routed through Tor, and non-Tor traffic is blocked at the firewall level. This ensures complete anonymity for all online activities.</p>
+                    </div>
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-lg col-span-full md:col-span-1 md:col-start-2">
+                        <h4 class="text-xl font-semibold text-white mb-3"><i class="fas fa-eraser text-lg mr-2"></i> Instant Self-Destruction</h4>
+                        <p class="text-gray-400 text-sm">The "Nuke" feature is designed for rapid, irreversible data sanitization. It employs cryptographic erasure techniques, overwriting encryption keys and critical metadata, rendering the entire system unreadable within seconds. This is a last-resort, but highly effective, privacy safeguard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="py-24 section">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">Get OpenNyx. Coming Soon.</h3>
+                <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                    We are diligently working on the first stable release of OpenNyx. Prepare for a new era of digital security and privacy. Stay tuned for updates on our official launch!
+                </p>
+                <a href="#" class="bg-white text-gray-900 font-medium py-3 px-6 rounded-full inline-flex items-center space-x-2 opacity-50 cursor-not-allowed">
+                    <i class="fas fa-download"></i>
+                    <span>Download Now (Coming Soon)</span>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Collaborate CTA Section -->
+        <section id="collaborate" class="py-24 section">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">Join the Mission. Build the Future of Privacy.</h3>
+                <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                    We are actively seeking passionate and skilled developers, security researchers, and privacy advocates to contribute to OpenNyx. If you believe in a truly secure digital world and have expertise in Linux kernel development, cryptography, network security, or UI/UX, we want to hear from you.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center mt-8">
+                    <a href="mailto:opennyx@proton.me" class="bg-gray-800 text-white font-medium py-3 px-6 rounded-full inline-flex items-center space-x-2 transition-all cta-button">
+                        <i class="fas fa-code"></i>
+                        <span>Contact us to code</span>
+                    </a>
+                    <a href="https://github.com/OpenNyx" target="_blank" rel="noopener noreferrer" class="bg-gray-800 text-white font-medium py-3 px-6 rounded-full inline-flex items-center space-x-2 transition-all cta-button">
+                        <i class="fab fa-github"></i>
+                        <span>Visit our GitHub</span>
+                    </a>
+                </div>
+                <p class="text-sm text-gray-500 mt-4">opennyx@proton.me</p>
+            </div>
+        </section>
+        
+        <!-- Donate CTA Section -->
+        <section id="donate" class="py-24 section">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">Support Our Cause. Empower Digital Freedom.</h3>
+                <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                    OpenNyx is an ambitious open-source project driven by community support. Your financial contributions are vital for covering development costs, infrastructure, security audits, and hardware for testing. Every donation, no matter the size, helps us move closer to a more secure and private digital future.
+                </p>
+                <div class="bg-gray-800 rounded-lg p-6 inline-block">
+                    <p class="text-xs text-gray-400 uppercase tracking-wide mb-2">Bitcoin Donation Address</p>
+                    <code class="text-white break-all text-sm md:text-base select-all">
+                        bc1qxse64vze00yl3mc90rw9cxf8pxw77fec74jup3
+                    </code>
+                    <!-- QR code for Bitcoin address -->
+                    <div class="w-32 h-32 mx-auto mt-4 rounded-md flex items-center justify-center">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=128x128&data=bitcoin:bc1qxse64vze00yl3mc90rw9cxf8pxw77fec74jup3" alt="Bitcoin QR Code" class="w-full h-full object-contain">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-8 text-center text-gray-500 text-sm">
+        <p class="mb-2">&copy; 2025 OpenNyx. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Scroll Animations, Mobile Menu, and Typing Effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll Animation Logic
+            const sections = document.querySelectorAll('.section');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Optional: If you want the animation to only play once
+                        // observer.unobserve(entry.target);
+                    } else {
+                        // Optional: If you want the animation to reset when out of view
+                        // entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close mobile menu when a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // Typing Effect Logic
+            const typingTextElement = document.getElementById('typing-text');
+            // Phrases for the typing effect, without "where" as it's now in the HTML
+            const phrases = [
+                "everything is secure.",
+                "your privacy is absolute.",
+                "data self-destructs.",
+                "anonymity is built-in.",
+                "you control your digital life."
+            ];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function typeWriter() {
+                const currentPhrase = phrases[phraseIndex];
+                if (isDeleting) {
+                    // Deleting text
+                    typingTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    // Typing text
+                    typingTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    // Pause at end of phrase, then start deleting
+                    setTimeout(() => isDeleting = true, 1500); // Pause before deleting
+                } else if (isDeleting && charIndex === 0) {
+                    // Finished deleting, move to next phrase
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(typeWriter, 500); // Pause before typing next phrase
+                    return; // Exit to avoid immediate next character type
+                }
+
+                const typingSpeed = isDeleting ? 70 : 100; // Faster deleting
+                setTimeout(typeWriter, typingSpeed);
+            }
+
+            // Start the typing effect when the page loads
+            if (typingTextElement) {
+                typeWriter();
+            }
+        });
+    </script>
+</body>
+</html>
